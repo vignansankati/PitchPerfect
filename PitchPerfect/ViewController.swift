@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var tapToRecordLBL: UILabel!
+    
+    @IBAction func record(sender: AnyObject) {
+        tapToRecordLBL.text = "Recording in progress"
+    }
+    
+    @IBAction func stopRecording(sender: AnyObject) {
+        tapToRecordLBL.text = "Tap to record"
+    }
+    
     override func viewDidLoad() {
         print("Hello Pitch perfect")
         super.viewDidLoad()
