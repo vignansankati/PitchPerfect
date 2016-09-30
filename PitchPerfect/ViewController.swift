@@ -17,10 +17,14 @@ class ViewController: UIViewController {
     
     @IBAction func record(sender: AnyObject) {
         tapToRecordLBL.text = "Recording in progress"
+        stopRecordingBTN.enabled = true
+        recordBTN.enabled = false
     }
     
     @IBAction func stopRecording(sender: AnyObject) {
         tapToRecordLBL.text = "Tap to record"
+        recordBTN.enabled = true
+        stopRecordingBTN.enabled = false
     }
     
     override func viewDidLoad() {
@@ -34,6 +38,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        stopRecordingBTN.enabled = false
+    }
 
 }
 
