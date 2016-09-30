@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tapToRecordLBL: UILabel!
+    @IBOutlet weak var recordBTN: UIButton!
+    @IBOutlet weak var stopRecordingBTN: UIButton!
+    
     
     @IBAction func record(sender: AnyObject) {
         tapToRecordLBL.text = "Recording in progress"

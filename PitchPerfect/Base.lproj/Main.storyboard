@@ -17,30 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07V-kw-NIE">
-                                <rect key="frame" x="276" y="285" width="49" height="30"/>
-                                <state key="normal" title="Record"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07V-kw-NIE">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <state key="normal" image="record button"/>
                                 <connections>
                                     <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qo-Eb-DAS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZZ-BB-zEc">
-                                <rect key="frame" x="249" y="368" width="102" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="Vwv-HV-q7J"/>
-                                    <constraint firstAttribute="height" constant="30" id="oe8-a4-1mQ"/>
-                                </constraints>
-                                <state key="normal" title="Stop recording"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZZ-BB-zEc">
+                                <rect key="frame" x="275" y="403" width="50" height="50"/>
+                                <state key="normal" image="stop button"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6uh-7A-poU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0f-ev-Bor">
-                                <rect key="frame" x="249" y="323" width="103" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="SnP-zz-k39"/>
-                                    <constraint firstAttribute="width" constant="103" id="oMw-4p-VpC"/>
-                                </constraints>
+                                <rect key="frame" x="249" y="358" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,15 +40,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="m0f-ev-Bor" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3hh-uV-5VZ"/>
+                            <constraint firstItem="m0f-ev-Bor" firstAttribute="top" secondItem="07V-kw-NIE" secondAttribute="bottom" constant="8" id="KGX-SE-tzm"/>
+                            <constraint firstItem="2ZZ-BB-zEc" firstAttribute="top" secondItem="m0f-ev-Bor" secondAttribute="bottom" constant="24" id="QIl-HB-54Y"/>
                             <constraint firstItem="07V-kw-NIE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y3e-7Z-Krb"/>
-                            <constraint firstItem="m0f-ev-Bor" firstAttribute="top" secondItem="07V-kw-NIE" secondAttribute="bottom" constant="8" id="gSP-5V-tNN"/>
                             <constraint firstItem="07V-kw-NIE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jdU-Oc-49Z"/>
-                            <constraint firstItem="2ZZ-BB-zEc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lbW-Iy-Rjj"/>
-                            <constraint firstItem="2ZZ-BB-zEc" firstAttribute="top" secondItem="m0f-ev-Bor" secondAttribute="bottom" constant="24" id="r5v-7f-gk1"/>
+                            <constraint firstItem="m0f-ev-Bor" firstAttribute="centerX" secondItem="07V-kw-NIE" secondAttribute="centerX" id="ud0-iE-3VD"/>
+                            <constraint firstItem="2ZZ-BB-zEc" firstAttribute="centerX" secondItem="m0f-ev-Bor" secondAttribute="centerX" id="yMf-gI-C5h"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="recordBTN" destination="07V-kw-NIE" id="TDN-iR-PMP"/>
+                        <outlet property="stopRecordingBTN" destination="2ZZ-BB-zEc" id="1Yx-SJ-web"/>
                         <outlet property="tapToRecordLBL" destination="m0f-ev-Bor" id="cxs-aS-qnu"/>
                     </connections>
                 </viewController>
@@ -64,4 +58,8 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="record button" width="100" height="100"/>
+        <image name="stop button" width="50" height="50"/>
+    </resources>
 </document>
