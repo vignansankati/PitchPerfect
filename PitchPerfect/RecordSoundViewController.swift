@@ -64,6 +64,14 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         }
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "stopRecordingSegue" {
+            let playSoundViewController = segue.destinationViewController as! PlaySoundViewController
+            let recordedAudioURL = sender as! NSURL
+            playSoundViewController.recordedAudioURL = recordedAudioURL
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

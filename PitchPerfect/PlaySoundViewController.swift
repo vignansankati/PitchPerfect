@@ -11,14 +11,6 @@ import UIKit
 class PlaySoundViewController: UIViewController {
     
     var recordedAudioURL:NSURL!
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "stopRecordingSegue" {
-            let playSoundViewController = segue.destinationViewController as! PlaySoundViewController
-            let recordedAudioURL = sender as! NSURL
-            playSoundViewController.recordedAudioURL = recordedAudioURL
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
